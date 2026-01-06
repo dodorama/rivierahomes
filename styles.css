@@ -1,3 +1,27 @@
+:root {
+    /* Colors */
+    --color-background: rgb(242, 233, 220);
+    --color-background-alt: rgb(249, 245, 240);
+    --color-text: rgb(202, 177, 156);
+    --color-primary: rgb(179, 139, 116);
+    --color-secondary: rgb(202, 177, 156);
+    --color-light: rgb(249, 245, 240);
+
+    /* Font Sizes */
+    --font-size-sm: 1rem;
+    --font-size-base: 1.25rem;
+    --font-size-lg: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-2xl: 3.5rem;
+
+    /* Spacing */
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+}
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -5,42 +29,42 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 100%;
+}
+
 body {
     font-family: "Times New Roman", Times, serif, sans-serif;
     line-height: 1.6;
-    color: rgb(202 177 156);
-    background-color: rgb(242, 233, 220);
-    font-size: 1.25rem;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    font-size: var(--font-size-base);
 }
 
 /* Typography */
 h1,
 h2,
 h3 {
-    color: rgb(179 139 116);
+    color: var(--color-primary);
     font-weight: 400;
 }
-
 h1 {
-    font-size: 3.5rem;
+    font-size: var(--font-size-2xl);
 }
-
 h2 {
-    font-size: 2rem;
+    font-size: var(--font-size-xl);
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-sm);
 }
-
 h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-sm);
 }
-
 /* Layout */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 var(--spacing-sm);
 }
 
 /* Navigation */
@@ -50,40 +74,41 @@ h3 {
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: rgb(242, 233, 220);
+    background-color: var(--color-background);
     text-transform: uppercase;
-    border-bottom: 1px solid rgb(202 177 156);
+    border-bottom: 1px solid var(--color-primary);
 }
 
 .nav-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: var(--spacing-sm) 0;
 }
 
-.logo {
-    font-size: 2rem;
-    color: rgb(179 139 116);
+.logo a {
+    font-size: var(--font-size-xl);
+    color: var(--color-primary);
     letter-spacing: 0.1em;
+    text-decoration: none;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: var(--spacing-lg);
 }
 
 .nav-menu a {
     text-decoration: none;
-    color: rgb(202 177 156);
+    color: var(--color-text);
     font-weight: 500;
     transition: color 0.3s;
 }
 
 .nav-menu a:hover,
 .nav-menu a.active {
-    color: rgb(179 139 116);
+    color: var(--color-primary);
 }
 
 .menu-toggle {
@@ -98,7 +123,7 @@ h3 {
 .menu-toggle span {
     width: 25px;
     height: 3px;
-    background-color: rgb(179 139 116);
+    background-color: var(--color-primary);
     margin: 3px 0;
     transition: 0.3s;
 }
@@ -132,7 +157,7 @@ h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 0;
 }
 
@@ -140,25 +165,25 @@ h3 {
     position: relative;
     z-index: 1;
     text-align: center;
-    padding: 2rem;
+    padding: var(--spacing-lg);
 }
 
 .hero-content h1 {
     margin-bottom: 0.2rem;
-    color: rgb(255 247 238);
+    color: var(--color-light);
 }
 
-.hero-content .subtitle {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+.hero-content p {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-lg);
     font-weight: 400;
-    color: rgb(255 247 238);
+    color: var(--color-light);
     font-style: italic;
 }
 
 .cta-buttons {
     display: flex;
-    gap: 1rem;
+    gap: var(--spacing-sm);
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -166,7 +191,7 @@ h3 {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 0.8rem 2rem;
+    padding: 0.8rem var(--spacing-lg);
     text-decoration: none;
     border-radius: 5px;
     font-weight: 400;
@@ -174,68 +199,67 @@ h3 {
     border: 2px solid transparent;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: var(--font-size-sm);
 }
 
 .btn-primary {
-    background-color: rgb(202 177 156);
-    color: #fff;
+    background-color: var(--color-secondary);
+    color: var(--color-light);
 }
 
 .btn-primary:hover {
-    background-color: rgb(179 139 116);
+    background-color: var(--color-primary);
     transform: translateY(-2px);
 }
 
 .btn-secondary {
-    background-color: transparent;
-    color: #fff;
-    border-color: #fff;
+    background-color: var(--color-light);
+    color: var(--color-primary);
 }
 
 .btn-secondary:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: var(--color-background);
+    transform: translateY(-2px);
 }
 
 /* Page Sections */
 .page-header {
-    padding: 4rem 0 0 0;
+    padding: var(--spacing-2xl) 0 0 0;
     text-align: center;
     margin-top: 70px;
 }
 
 .page-header .tagline {
-    font-size: 2rem;
+    font-size: var(--font-size-xl);
 }
 
 .intro-section {
-    padding: 4rem 0;
+    padding: var(--spacing-2xl) 0;
 }
 
 .intro-section > .container > p {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto 4rem;
+    margin: 0 auto var(--spacing-2xl);
 }
 
 .bottom-section {
-    padding: 5rem 0;
-    background-color: rgb(249 245 240);
+    padding: var(--spacing-2xl) 0;
+    background-color: var(--color-background-alt);
     text-align: center;
 }
 
 .bottom-section > .container > p {
-    margin-bottom: 3rem;
+    margin-bottom: var(--spacing-xl);
 }
 
 /* Images */
 .image {
     display: block;
-    margin-top: 4rem;
+    margin-top: var(--spacing-2xl);
     max-width: 100%;
     height: auto;
-    border: 1px solid rgb(202 177 156);
+    border: 1px solid var(--color-primary);
 }
 
 .progetto-image {
@@ -246,14 +270,14 @@ h3 {
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 3rem 0;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
 }
 
 .feature {
-    padding: 2rem;
+    padding: var(--spacing-lg);
     text-align: center;
-    border: 1px solid rgb(202 177 156);
+    border: 1px solid var(--color-primary);
     border-radius: 12px;
 }
 
@@ -261,22 +285,22 @@ h3 {
 .units-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    margin: 4rem 0;
+    gap: var(--spacing-xl);
+    margin: var(--spacing-2xl) 0;
 }
 
 .unit-card {
     text-align: center;
-    border: 1px solid rgb(202 177 156);
+    border: 1px solid var(--color-primary);
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: var(--spacing-md);
 }
 
 .unit-image {
     width: 100%;
     height: 800px;
     object-fit: contain;
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-sm);
     mix-blend-mode: multiply;
 }
 
@@ -286,41 +310,41 @@ h3 {
 }
 
 .pdf-link {
-    color: rgb(179 139 116);
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .pdf-link:hover {
-    color: rgb(202 177 156);
+    color: var(--color-secondary);
     text-decoration: underline;
 }
 
 /* Contact Info */
 .contact-info {
-    margin-top: 2rem;
-    font-size: 1.5rem;
+    margin-top: var(--spacing-lg);
+    font-size: var(--font-size-lg);
 }
 
 .email-link {
-    color: rgb(179 139 116);
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .email-link:hover {
-    color: rgb(202 177 156);
+    color: var(--color-secondary);
     text-decoration: underline;
 }
 
 /* Footer */
 footer {
-    background-color: rgb(242, 233, 220);
-    padding: 2rem 0;
+    background-color: var(--color-background);
+    padding: var(--spacing-lg) 0;
     text-align: center;
-    font-size: 1rem;
+    font-size: var(--font-size-sm);
 }
 
 /* Responsive Design */
@@ -334,7 +358,7 @@ footer {
         top: 100%;
         left: 0;
         right: 0;
-        background-color: rgb(242, 233, 220);
+        background-color: var(--color-background);
         flex-direction: column;
         gap: 0;
         padding: 0;
@@ -349,12 +373,15 @@ footer {
     }
 
     .nav-menu li {
-        border-bottom: 1px solid rgb(202 177 156);
+        border-bottom: 1px solid var(--color-primary);
     }
 
     .nav-menu a {
         display: block;
-        padding: 1rem 1.5rem;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    .logo a {
+        font-size: var(--font-size-lg);
     }
 
     .hero {
@@ -362,15 +389,15 @@ footer {
     }
 
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: var(--font-size-xl);
     }
 
-    .hero-content .subtitle {
-        font-size: 1rem;
+    .hero-content p {
+        font-size: var(--font-size-base);
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: var(--font-size-xl);
     }
 
     .cta-buttons {
@@ -395,15 +422,19 @@ footer {
     }
 
     .hero-content h1 {
-        font-size: 1.5rem;
+        font-size: var(--font-size-lg);
+    }
+
+    .hero-content p {
+        font-size: var(--font-size-lg);
     }
 
     h1 {
-        font-size: 1.5rem;
+        font-size: var(--font-size-lg);
     }
 
     .btn {
-        padding: 0.6rem 1.5rem;
+        padding: 0.6rem var(--spacing-md);
         font-size: 0.9rem;
     }
 
