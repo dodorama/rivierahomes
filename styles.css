@@ -307,6 +307,14 @@ h3 {
     mix-blend-mode: multiply;
 }
 
+.unit-image-small {
+    height: 275px;
+}
+
+.unit-image-large {
+    height: 1422px;
+}
+
 .unit-info {
     margin: 0;
     line-height: 1.8;
@@ -416,6 +424,14 @@ footer {
     .unit-image {
         height: 600px;
     }
+
+    .unit-image-small {
+        height: 206px;
+    }
+
+    .unit-image-large {
+        height: 1066px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -443,5 +459,13 @@ footer {
 
     .unit-image {
         height: 500px;
+    }
+
+    .unit-image-small {
+        height: 172px;
+    }
+
+    .unit-image-large {
+        height: 889px;
     }
 }
